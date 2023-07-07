@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'org.example.Main'
+
+run {
+    standardInput(System.in)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'org.openwms:org.openwms.core.integration.hibernate:1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/io.javalin/javalin
+    implementation 'io.javalin:javalin:5.3.2'
+
+    // jsoup HTML parser library @ https://jsoup.org/
+    implementation 'org.jsoup:jsoup:1.15.3'
+
+    implementation("org.slf4j:slf4j-simple:2.0.3")
+
+    // https://mvnrepository.com/artifact/org.freemarker/freemarker
+    implementation 'org.freemarker:freemarker:2.3.32'
+
+    // https://mvnrepository.com/artifact/io.javalin/javalin-rendering
+    implementation 'io.javalin:javalin-rendering:5.3.2'
+
+    //ORM - Hibernate.
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    implementation 'org.hibernate:hibernate-core:6.1.7.Final'
+
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2:2.1.214'
+
+    // https://mvnrepository.com/artifact/org.jasypt/jasypt
+    implementation 'org.jasypt:jasypt:1.9.3'
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation 'org.postgresql:postgresql:42.2.18'
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.14.0")
+}
+
+test {
+    useJUnitPlatform()
+}
